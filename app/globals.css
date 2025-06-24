@@ -1,0 +1,313 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+}
+
+/* تحسينات عصرية للاسكرول */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #8b5cf6, #ec4899);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #7c3aed, #db2777);
+}
+
+/* تأثيرات عصرية للانتقالات */
+* {
+  transition: all 0.2s ease;
+}
+
+/* تأثيرات الزجاج المصقول المتطورة */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* تأثيرات الإضاءة المتطورة */
+.glow {
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
+}
+
+.glow:hover {
+  box-shadow: 0 0 50px rgba(139, 92, 246, 0.6);
+}
+
+/* تحسينات الأداء */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* تأثيرات النص المتدرج المتطورة */
+.gradient-text {
+  background: linear-gradient(45deg, #8b5cf6, #ec4899, #06b6d4, #8b5cf6);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 4s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+}
+
+/* تأثيرات الأزرار العصرية المتطورة */
+.modern-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.modern-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.modern-button:hover::before {
+  left: 100%;
+}
+
+.modern-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(45deg, #8b5cf6, #ec4899, #06b6d4, #8b5cf6);
+  background-size: 400% 400%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  animation: gradient-rotate 4s linear infinite;
+  z-index: -1;
+}
+
+.modern-button:hover::after {
+  opacity: 0.4;
+}
+
+@keyframes gradient-rotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* تأثيرات الكارد العصرية المتطورة */
+.modern-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modern-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(139, 92, 246, 0.4);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
+}
+
+/* تأثيرات الرسائل المتطورة */
+.message-enter {
+  animation: messageSlideIn 0.3s ease-out;
+}
+
+@keyframes messageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* تأثيرات التحميل العصرية المتطورة */
+.loading-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.loading-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #8b5cf6, #ec4899, #06b6d4);
+  animation: loadingBounce 1.6s ease-in-out infinite both;
+}
+
+.loading-dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+.loading-dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes loadingBounce {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1.2);
+  }
+}
+
+/* تأثيرات الخلفية الديناميكية المتطورة */
+.dynamic-bg {
+  background: linear-gradient(45deg, #0f172a, #1e1b4b, #581c87, #1e1b4b, #0f172a);
+  background-size: 500% 500%;
+  animation: dynamicGradient 20s ease infinite;
+}
+
+@keyframes dynamicGradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+}
+
+/* تأثيرات الجزيئات المتطورة */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #8b5cf6, #ec4899, #06b6d4);
+  animation: particleFloat 10s linear infinite;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(100vh) scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.5) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* تحسينات الاستجابة المتطورة */
+@media (max-width: 768px) {
+  .modern-card {
+    backdrop-filter: blur(15px);
+  }
+
+  .glass {
+    backdrop-filter: blur(8px);
+  }
+
+  .perspective-1000 {
+    perspective: 800px;
+  }
+}
+
+/* تأثيرات الهوفر المتقدمة */
+.advanced-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.advanced-hover:hover {
+  transform: translateY(-4px) scale(1.02) rotateX(2deg);
+  filter: brightness(1.1) saturate(1.2);
+  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
+}
+
+/* تأثيرات النبضات المتطورة */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.8);
+    transform: scale(1.05);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* تأثيرات الانتقالات الناعمة */
+.smooth-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* تأثيرات الشفافية المتدرجة */
+.fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
